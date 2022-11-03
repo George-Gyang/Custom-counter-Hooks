@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(147, 192, 192);
+}
+
+.main {
+  background-color: paleturquoise;
+  height: 70vh;
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.btn-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* increament/Decrement buttons */
+.btn {
+  display: inline-block;
+  color: rgb(228, 225, 225);
+  border-radius: 6px;
+  height: 2.5rem;
+  width: 10rem;
+  background-color: rgb(9, 37, 37);
+}
+
+.btn:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+}
+
+.reset-btn {
+  display: inline-block;
+  border-radius: 2px;
+  height: 2rem;
+  width: 7rem;
+  background-color: darkgray;
+  color: brown;
+}
+
+.reset-btn:hover{
+      box-shadow: 0 8px 8px -4px white;
+}
