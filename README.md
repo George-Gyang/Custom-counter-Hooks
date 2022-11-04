@@ -1,4 +1,4 @@
-link to the project: [website](custom-counter-hooks.vercel.app).
+link to the project: [website](https://custom-counter-hooks.vercel.app/).
 
 # Getting Started with Create React App
 
