@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import { Routes, Route } from "react-router-dom";
 // import Counter from "./Counter";
-import "../assets/style.css"
+import "../assets/main.css"
+import Footer from "./footer";
 import Navbar from "./Navbar";
 
 
@@ -20,7 +21,7 @@ const CustomHook = () => {
         <>
         <Navbar />
             <main className="main">
-                <h1> Custom Counter Hook</h1>
+                <h2> Custom Counter Hook</h2>
                 <div>
                     <label>
                         <input type="number" />
@@ -35,6 +36,7 @@ const CustomHook = () => {
                     <button className="btn" onClick={decrement} >Decrement</button>
                 </div>
             </main>
+            <Footer/>
         </>
     )
 }

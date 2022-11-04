@@ -1,16 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../assets/style.css"
+import "../assets/nav.css"
 
 const Navbar = () => {
 
     return (
-        <nav>
+        <nav className="navbar">
             <ul>
-                <li><NavLink to="/">home</NavLink> </li>
-                <li><NavLink to="/counter">Custom Hook Counter</NavLink> </li>
-                <li><NavLink to="/useReducer">useReducer Hook Counter</NavLink> </li>
-                <li><NavLink to="/error_boundary">Error Boundary</NavLink> </li>
+                <li className="nav-links" ><NavLink to="/">home</NavLink> </li>
+                <li className="nav-links" ><NavLink to="/counter">custom counter</NavLink> </li>
+                <li className="nav-links" ><NavLink to="/useReducer">reducer counter</NavLink> </li>
+                <li className="nav-links" ><NavLink to="/error_boundary">error boundary</NavLink> </li>
             </ul>
         </nav>
     )

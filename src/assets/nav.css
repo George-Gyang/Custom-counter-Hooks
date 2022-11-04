@@ -1,0 +1,30 @@
+.navbar {
+  background-color: hsl(222deg 14% 15%);
+  /* height: 3rem; */
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  padding: 1rem;
+  margin: 0px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: rgb(147, 192, 192);
+}
+
+@media (max-width: 768px) {
+  .nav-links a{
+    font-size: 1rem;
+  }
+  
+}

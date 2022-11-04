@@ -2,17 +2,18 @@ import React from "react";
 import Footer from "./footer";
 import Navbar from "./Navbar";
 
-const Home = () =>{
-
+const ErrorBoundary = () =>{
     return(
         <>
-        <Navbar />
-        <main className="main">
-            <h1>React Custom and useReducer Hooks Counter App</h1>
+        <Navbar/>
+        <main>
+            <h2>
+                Error Boundary files
+            </h2>
         </main>
         <Footer/>
         </>
     )
 }
 
-export default Home;
+export default ErrorBoundary;

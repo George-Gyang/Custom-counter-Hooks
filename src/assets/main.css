@@ -3,12 +3,11 @@ body {
 }
 
 .main {
-  background-color: paleturquoise;
+  /* background-color: paleturquoise; */
   height: 70vh;
   max-width: 600px;
   margin: auto;
-  box-shadow: -5px 4px 3px -3px black, 5px -4px 3px -3px black
-  ;
+  box-shadow: -5px 4px 3px -3px black, 5px -4px 3px -3px black;
 }
 
 h1 {
@@ -43,6 +42,32 @@ h1 {
   color: brown;
 }
 
-.reset-btn:hover{
-      box-shadow: 0 8px 8px -4px white;
+.reset-btn:hover {
+  box-shadow: 0 8px 8px -4px white;
+}
+
+.no-page{
+  padding-top: 0.5rem;
+}
+
+.no-page h2 {
+  color: red;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .main{
+    max-width: 400px;
+  }
+    .btn-section{
+      flex-direction: column;
+      align-items: center;
+    }
+    .btn{
+      margin-top: 1rem;
+    }
+    .reset-btn{
+      margin-top: 1rem;
+    }
 }

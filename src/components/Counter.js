@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
-import "../assets/style.css"
+import "../assets/main.css"
+import Footer from "./footer";
 import Navbar from "./Navbar";
 // USE REDUCER HOOK COUNTER
 
@@ -27,7 +28,7 @@ function Counter() {
         <>
         <Navbar />
             <main className="main">
-                <h1> useReduer Counter Hook</h1>
+                <h2> useReduer Counter Hook</h2>
                 <div>
                     <label>
                         <input type="number" />
@@ -42,6 +43,7 @@ function Counter() {
                     <button className="btn" onClick={() => dispatch({type : "decrement"})} >Decrement</button>
                 </div>
             </main>
+            <Footer/>
         </>
     )
 }

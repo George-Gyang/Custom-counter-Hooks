@@ -6,15 +6,18 @@ import Home from './components/Home';
 import './App.css';
 import CustomHook from './components/CustomHook';
 import Counter from './components/Counter';
+import ErrorBoundary from './components/ErrorBoundary';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
     <div className="App">
       <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/useReducer" element={<Counter />} />
-      <Route path="/counter" element={<CustomHook />} />
-      <Route path="/custom_hook_counter" element={<CustomHook />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/counter" element={<CustomHook />} />
+        <Route path="/useReducer" element={<Counter />} />
+        <Route path="/error_boundary" element={<ErrorBoundary />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
       {/* <Counter /> */}
       {/* <CustomHook />
