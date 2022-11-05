@@ -10,7 +10,7 @@ const Navbar = () => {
                 <li className="nav-links" ><NavLink to="/">home</NavLink> </li>
                 <li className="nav-links" ><NavLink to="/counter">custom counter</NavLink> </li>
                 <li className="nav-links" ><NavLink to="/useReducer">reducer counter</NavLink> </li>
-                <li className="nav-links" ><NavLink to="/error_boundary">error boundary</NavLink> </li>
+                <li className="nav-links" ><NavLink to="/error_boundary">error testing</NavLink> </li>
             </ul>
         </nav>
     )

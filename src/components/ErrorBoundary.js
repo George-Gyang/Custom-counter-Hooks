@@ -1,4 +1,7 @@
 import React from "react";
+import "../assets/footer.css";
+import "../assets/nav.css"
+import "../assets/main.css";
 // import { NavLink } from "react-router-dom";
 
 class ErrorBoundary extends React.Component {

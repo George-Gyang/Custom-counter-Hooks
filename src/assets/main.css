@@ -1,5 +1,8 @@
 body {
   background-color: rgb(147, 192, 192);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
@@ -8,6 +11,7 @@ body {
   max-width: 600px;
   margin: auto;
   box-shadow: -5px 4px 3px -3px black, 5px -4px 3px -3px black;
+  flex: 1;
 }
 
 h1 {

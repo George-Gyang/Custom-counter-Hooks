@@ -1,4 +1,7 @@
 import React from "react";
+import "../assets/footer.css";
+import "../assets/nav.css"
+import "../assets/main.css";
 // import Footer from "./footer";
 // import Navbar from "./Navbar";
 
