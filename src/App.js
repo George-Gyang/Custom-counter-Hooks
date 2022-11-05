@@ -6,8 +6,9 @@ import Home from './components/Home';
 import './App.css';
 import CustomHook from './components/CustomHook';
 import Counter from './components/Counter';
-import ErrorBoundary from './components/ErrorBoundary';
 import ErrorPage from './components/ErrorPage';
+// import BuggyCounter from './components/ErrorTesting';
+import ErrorTesting from './components/ErrorTesting';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/counter" element={<CustomHook />} />
         <Route path="/useReducer" element={<Counter />} />
-        <Route path="/error_boundary" element={<ErrorBoundary />} />
+        <Route path="/error_boundary" element={<ErrorTesting />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       {/* <Counter /> */}
