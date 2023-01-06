@@ -14,7 +14,12 @@ const CustomHook = () => {
     // handle onClick event
     const increment = () => setCount(count + 1);
     const decrement = () => setCount(count - 1);
-    const reset = () => setCount(0);
+    const reset = () => {
+        setCount(0)
+        // let inputValue = 0
+        // const input.value =" "
+        // setIValue(0)
+    };
 
     // Handling onChange event
     // const [change, setChange] = useState("")
@@ -22,7 +27,9 @@ const CustomHook = () => {
         e.preventDefault();
         // console.log(e.target.value);
         // const inputValue = e.target.value
-        setCount(e.target.value)
+        let inputValue = e.target.value - 1 + 1;
+        setCount(inputValue)
+            // setCount(e.target.value)
             // return " "
             ;
         // console.log(inputValue)
