@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(147, 192, 192);
+  background-color: rgb(147, 192, 192) !important;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ h1 {
 .btn-section {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 /* increament/Decrement buttons */

@@ -1,49 +1,74 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useRef } from "react";
 import "../assets/main.css"
 import Footer from "./footer";
 import Navbar from "./Navbar";
 // USE REDUCER HOOK COUNTER
 
-const initialCount = {count : 0};
+function useCounterReducer() {
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case "increment":
-            return { count: state.count + 1 };
-        case "decrement":
-            return { count: state.count - 1 };
-        case "reset":
-            return { count: state.count = 0 };
-        default:
-            throw new Error();
+    const initialCount = { count: 0, };
 
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case "increment":
+                return { count: state.count + 1 };
+            case "decrement":
+                return { count: state.count - 1 };
+            case "reset":
+                return { count: initialCount.count };
+            case "setInput":
+                return {...state, count: action.payload }
+            default:
+                return state;
+                // throw new Error();
+
+        }
     }
+
+
+    const [state, dispatch] = useReducer(reducer, initialCount);
+
+    return [state, dispatch];
 }
 
-function Counter() {
+const Counter =() =>{
 
-    const [state, dispatch] = useReducer(reducer, initialCount)
+    const [state, dispatch] = useCounterReducer({count: 0})
+    const inputRef = useRef(null);
 
-    return (
+    const setInput =() =>{
+        if(inputRef.current.value === ""){
+            return state.count;
+        }
+        else{
+            dispatch({type: "setInput", payload: Number(inputRef.current.value)});
+            inputRef.current.value = "";
+        }
+    }
+
+    console.log(state.count)
+
+    return(
         <>
-        <Navbar />
+            <Navbar />
             <main className="main">
-                <h2> useReduer Counter Hook</h2>
+                <h2> useReducer Counter Hook</h2>
                 <div>
                     <label>
-                        <input type="number" />
+                        <input ref={inputRef} type="number" name="value" onChange={setInput} />
                     </label>
+                    {/* <button onClick={setInput}>set</button> */}
                 </div>
                 <div>
                     <h3>Count: {state.count}</h3>
                 </div>
                 <div className="btn-section">
-                    <button className="btn" onClick={() => dispatch({type : "increment"})} >Increament</button>
-                    <button className="reset-btn" onClick={() => dispatch({type : "reset"})} >Reset </button>
-                    <button className="btn" onClick={() => dispatch({type : "decrement"})} >Decrement</button>
+                    <button className="btn" onClick={() => dispatch({ type: "increment" })} >Increament</button>
+                    <button className="reset-btn" onClick={() => dispatch({ type: "reset" })} >Reset </button>
+                    <button className="btn" onClick={() => dispatch({ type: "decrement" })} disabled={state.count < 1 ? true : false} >Decrement</button>
                 </div>
             </main>
-            <Footer/>
+            <Footer />
         </>
     )
 }

@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 // import { Routes, Route } from "react-router-dom";
 // import Counter from "./Counter";
+import { Alert, AlertIcon, AlertTitle, AlertDescription, ChakraProvider} from '@chakra-ui/react'
+
 import "../assets/main.css"
 import Footer from "./footer";
 import Navbar from "./Navbar";
-import { Alert, AlertIcon, AlertTitle, AlertDescription, ChakraProvider} from '@chakra-ui/react'
 
 
 // USESTATE HOOK COUNTER
 
 const CustomHook = () => {
     const [count, setCount] = useState(0);
-    const [alert, setAlert] = useState("none")
+    let [alert, setAlert] = useState("none")
 
     // handle onClick event
-    const increment = () => setCount(count + 1);
+    const increment = () => {
+        setCount(count + 1)
+        setAlert("none")
+    };
+
     const decrement = () => {
         // setCount(count -1)
         if (count < 1) {
@@ -24,6 +29,7 @@ const CustomHook = () => {
             setCount(count - 1)
         }
     };
+
     const reset = () => {
         setCount(0)
     };
@@ -36,6 +42,7 @@ const CustomHook = () => {
         // const inputValue = e.target.value
         let inputValue = e.target.value - 1 + 1;
         setCount(inputValue)
+        e.target.value = ""
             // setCount(e.target.value)
             // return " "
             ;
@@ -47,7 +54,7 @@ const CustomHook = () => {
         <>
             <Navbar />
             <main className="main">
-                <h2> Custom Counter Hook</h2>
+                <h2 style = {{fontSize : "2rem"}}> Custom Counter Hook</h2>
                 <div>
                     <label>
                         <input type="number" onChange={handleChange} />
