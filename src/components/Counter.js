@@ -1,4 +1,7 @@
 import React, { useReducer, useRef } from "react";
+import { Alert, AlertIcon, AlertTitle, AlertDescription, ChakraProvider } from '@chakra-ui/react'
+
+
 import "../assets/main.css"
 import Footer from "./footer";
 import Navbar from "./Navbar";
@@ -7,6 +10,7 @@ import Navbar from "./Navbar";
 function useCounterReducer() {
 
     const initialCount = { count: 0, };
+    
 
     const reducer = (state, action) => {
         switch (action.type) {
@@ -17,10 +21,10 @@ function useCounterReducer() {
             case "reset":
                 return { count: initialCount.count };
             case "setInput":
-                return {...state, count: action.payload }
+                return { ...state, count: action.payload }
             default:
                 return state;
-                // throw new Error();
+            // throw new Error();
 
         }
     }
@@ -31,24 +35,36 @@ function useCounterReducer() {
     return [state, dispatch];
 }
 
-const Counter =() =>{
+const Counter = () => {
 
-    const [state, dispatch] = useCounterReducer({count: 0})
+    const [state, dispatch] = useCounterReducer({ count: 0 })
     const inputRef = useRef(null);
 
-    const setInput =() =>{
-        if(inputRef.current.value === ""){
+    const showAlert = () =>{
+        alert(null)
+    }
+
+    const decrement =() =>{
+        if(state.count > 1){
+            dispatch({type : "decrement"})
+        } else{
+            return state.count
+        }
+    }
+
+    const setInput = () => {
+        if (inputRef.current.value === "") {
             return state.count;
         }
-        else{
-            dispatch({type: "setInput", payload: Number(inputRef.current.value)});
+        else {
+            dispatch({ type: "setInput", payload: Number(inputRef.current.value) });
             inputRef.current.value = "";
         }
     }
 
     console.log(state.count)
 
-    return(
+    return (
         <>
             <Navbar />
             <main className="main">
@@ -65,8 +81,15 @@ const Counter =() =>{
                 <div className="btn-section">
                     <button className="btn" onClick={() => dispatch({ type: "increment" })} >Increament</button>
                     <button className="reset-btn" onClick={() => dispatch({ type: "reset" })} >Reset </button>
-                    <button className="btn" onClick={() => dispatch({ type: "decrement" })} disabled={state.count < 1 ? true : false} >Decrement</button>
+                    <button className="btn" onClick={decrement} disabled={state.count < 1 ? true : false} >Decrement</button>
                 </div>
+                <ChakraProvider>
+                    <Alert status='warning' display={showAlert}>
+                        <AlertIcon />
+                        <AlertTitle>Negative!!</AlertTitle>
+                        <AlertDescription>Numbers below 0 are not allowed.</AlertDescription>
+                    </Alert>
+                </ChakraProvider>
             </main>
             <Footer />
         </>

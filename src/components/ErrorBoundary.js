@@ -42,7 +42,7 @@ class ErrorBoundary extends React.Component {
                         {this.state.errorInfo.componentStack}
                     </details>
                     <footer>
-                        <p>GeoTech development. All reserved. </p>
+                        <p>GeoTech development. All rights reserved. </p>
                         <small> &copy; {year}</small>
                     </footer>
                 </div>

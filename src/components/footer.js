@@ -9,7 +9,7 @@ const Footer = () => {
 
     return (
         <footer>
-            <p>GeoTech development. All reserved. </p>
+            <p>GeoTech development. All rights reserved. </p>
             <small> &copy; {year}</small>
         </footer>
     )

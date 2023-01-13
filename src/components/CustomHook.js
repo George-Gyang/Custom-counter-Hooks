@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { Routes, Route } from "react-router-dom";
 // import Counter from "./Counter";
-import { Alert, AlertIcon, AlertTitle, AlertDescription, ChakraProvider} from '@chakra-ui/react'
+import { Alert, AlertIcon, AlertTitle, AlertDescription, ChakraProvider } from '@chakra-ui/react'
 
 import "../assets/main.css"
 import Footer from "./footer";
@@ -41,12 +41,19 @@ const CustomHook = () => {
         // console.log(e.target.value);
         // const inputValue = e.target.value
         let inputValue = e.target.value - 1 + 1;
-        setCount(inputValue)
+        if (inputValue < 0) {
+            setCount(count)
+            // e.target.value = ""
+            setAlert(" ")
+        } else {
+            setCount(inputValue)
+            // e.target.value = ""
+            setAlert("none")
+        }
         e.target.value = ""
-            // setCount(e.target.value)
-            // return " "
-            ;
-        // console.log(inputValue)
+        // setCount(inputValue)
+        // e.target.value = ""
+
     }
 
 
@@ -54,7 +61,7 @@ const CustomHook = () => {
         <>
             <Navbar />
             <main className="main">
-                <h2 style = {{fontSize : "2rem"}}> Custom Counter Hook</h2>
+                <h2 style={{ fontSize: "2rem" }}> Custom Counter Hook</h2>
                 <div>
                     <label>
                         <input type="number" onChange={handleChange} />
