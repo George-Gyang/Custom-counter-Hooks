@@ -1,4 +1,9 @@
 import React from "react";
+
+// bootstrap packages
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import "../assets/footer.css";
 import "../assets/nav.css"
 import "../assets/main.css";
@@ -27,14 +32,40 @@ class ErrorTesting extends React.Component {
             throw new Error('I crashed!');
         }
         return <>
-            <nav className="navbar">
+            {/* <nav className="navbar">
                 <ul>
                     <li className="nav-links" ><a href="/">home</a> </li>
                     <li className="nav-links" ><a href="/counter">custom counter</a> </li>
                     <li className="nav-links" ><a href="/useReducer">reducer counter</a> </li>
                     <li className="nav-links" ><a href="/error_boundary">error testing</a> </li>
                 </ul>
+            </nav> */}
+
+            <nav id="navbar" class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    {/* <a class="navbar-brand" href="#">Navbar</a> */}
+                    <button class="navbar-toggler toggle-btn bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon bg-light"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ul-nav">
+                            <li className="nav-links nav-item">
+                                <a href="/">home</a>
+                            </li>
+                            <li className="nav-links nav-item">
+                                <a href="/counter">custom counter</a>
+                            </li>
+                            <li className="nav-links nav-item">
+                                <a href="/useReducer">reducer counter</a>
+                            </li>
+                            <li className="nav-links nav-item">
+                                <a href="/error_boundary">error testing</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
+
             <h2>{this.state.counter}</h2>
             <button className="errorBtn" onClick={this.handleClick}>Click me</button>
             <footer>

@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/footer.css";
-import "../assets/nav.css"
+import "../assets/nav.css";
 import "../assets/main.css";
 // import { NavLink } from "react-router-dom";
 
@@ -27,14 +27,40 @@ class ErrorBoundary extends React.Component {
             // Error path
             return (
                 <div>
-                    <nav className="navbar">
+                    {/* <nav className="navbar">
                         <ul>
                             <li className="nav-links" ><a href="/">home</a> </li>
                             <li className="nav-links" ><a href="/counter">custom counter</a> </li>
                             <li className="nav-links" ><a href="/useReducer">reducer counter</a> </li>
                             <li className="nav-links" ><a href="/error_boundary">error testing</a> </li>
                         </ul>
-                    </nav>
+                    </nav> */}
+
+<nav id="navbar" class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    {/* <a class="navbar-brand" href="#">Navbar</a> */}
+                    <button class="navbar-toggler toggle-btn bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon bg-light"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ul-nav">
+                            <li className="nav-links nav-item">
+                                <a href="/">home</a>
+                            </li>
+                            <li className="nav-links nav-item">
+                                <a href="/counter">custom counter</a>
+                            </li>
+                            <li className="nav-links nav-item">
+                                <a href="/useReducer">reducer counter</a>
+                            </li>
+                            <li className="nav-links nav-item">
+                                <a href="/error_boundary">error testing</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
                     <h2>Something went wrong.</h2>
                     <details style={{ whiteSpace: 'pre-wrap' }}>
                         {this.state.error && this.state.error.toString()}

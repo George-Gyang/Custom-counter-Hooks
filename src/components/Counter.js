@@ -1,5 +1,5 @@
 import React, { useReducer, useRef } from "react";
-import { Alert, AlertIcon, AlertTitle, AlertDescription, ChakraProvider } from '@chakra-ui/react'
+// import { Alert, AlertIcon, AlertTitle, AlertDescription, ChakraProvider } from '@chakra-ui/react'
 
 
 import "../assets/main.css"
@@ -9,8 +9,8 @@ import Navbar from "./Navbar";
 
 function useCounterReducer() {
 
-    const initialCount = { count: 0, };
-    
+    const initialCount = { count: 0, showAlert: "none" };
+
 
     const reducer = (state, action) => {
         switch (action.type) {
@@ -37,17 +37,17 @@ function useCounterReducer() {
 
 const Counter = () => {
 
-    const [state, dispatch] = useCounterReducer({ count: 0 })
+    const [state, dispatch] = useCounterReducer({ count: 0, showAlert: null })
     const inputRef = useRef(null);
 
-    const showAlert = () =>{
-        alert(null)
-    }
+    // const showAlert = (prop) => {
+    //     prop = false
+    // }
 
-    const decrement =() =>{
-        if(state.count > 1){
-            dispatch({type : "decrement"})
-        } else{
+    const decrement = () => {
+        if (state.count > 0) {
+            dispatch({ type: "decrement" })
+        } else {
             return state.count
         }
     }
@@ -81,15 +81,15 @@ const Counter = () => {
                 <div className="btn-section">
                     <button className="btn" onClick={() => dispatch({ type: "increment" })} >Increament</button>
                     <button className="reset-btn" onClick={() => dispatch({ type: "reset" })} >Reset </button>
-                    <button className="btn" onClick={decrement} disabled={state.count < 1 ? true : false} >Decrement</button>
+                    <button className="btn" onClick={decrement} >Decrement</button>
                 </div>
-                <ChakraProvider>
-                    <Alert status='warning' display={showAlert}>
+                {/* <ChakraProvider>
+                    <Alert status='warning' display={notify} >
                         <AlertIcon />
                         <AlertTitle>Negative!!</AlertTitle>
                         <AlertDescription>Numbers below 0 are not allowed.</AlertDescription>
                     </Alert>
-                </ChakraProvider>
+                </ChakraProvider> */}
             </main>
             <Footer />
         </>

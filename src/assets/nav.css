@@ -1,6 +1,13 @@
-.navbar {
-  background-color: hsl(222deg 14% 15%);
+#navbar {
+  background-color: hsl(222deg 14% 15%) !important;
   /* height: 3rem; */
+}
+
+.toggle-btn{
+  border: 1px solid #93c0c0;
+}
+.ul-nav{
+  margin: auto !important;
 }
 
 .navbar ul {
@@ -16,15 +23,16 @@
   color: white;
   font-size: 1.8rem;
   text-decoration: none;
+  padding: 0 2rem;
 }
 
 .nav-links a:hover {
   color: rgb(147, 192, 192);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .nav-links a{
     font-size: 1rem;
   }
   
-}
+} */
